@@ -225,6 +225,10 @@ time_add :: proc "contextless" (t: Time, d: Duration) -> Time {
 	return Time{t._nsec + i64(d)}
 }
 
+time_subtract :: proc "contextless" (t: Time, d: Duration) -> Time {
+	return Time{t._nsec - i64(d)}
+}
+
 // Accurate sleep borrowed from: https://blat-blatnik.github.io/computerBear/making-accurate-sleep-function/
 //
 // Accuracy seems to be pretty good out of the box on Linux, to within around 4µs worst case.
